@@ -1,0 +1,23 @@
+<div style="display: flex; justify-content: center; align-items: center; width: 100%; height: 100vh;">
+    <div class="form-container">
+        <h1 style="text-align: center;">Register!</h1>
+        <form [formGroup]="registerationForm" (ngSubmit)="onSubmit()">
+            <mat-form-field appearance="outline" class="form-field-full">
+                <mat-label>Email</mat-label>
+                <input matInput formControlName="email" type="email">
+            </mat-form-field>
+            <mat-form-field appearance="outline" class="form-field-full">
+                <mat-label>password</mat-label>
+                <input matInput formControlName="password" type="password">
+            </mat-form-field>
+            <button 
+                mat-raised-button 
+                primary 
+                [disabled]="!registerationForm.valid"
+            >
+                Sign up
+            </button>
+            <p>Already have an account? <a routerLink="/login">Sign in</a></p>
+        </form>
+    </div>
+</div>

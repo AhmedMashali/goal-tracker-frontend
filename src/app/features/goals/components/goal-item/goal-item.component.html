@@ -1,0 +1,23 @@
+<div class="goal-item__container">
+    <div class="goal-item__header">
+        <div class="goal-item__header-content">
+            <h2 class="goal-item__title">
+                {{ goal.title }}
+            </h2>
+            <p class="goal-item__deadline">
+                {{ goal.deadline | date: 'MMMM d, y' }}
+            </p>
+        </div>
+        <button class="goal-item__delete-goal-btn" (click)="onDeleteGoal($event)">
+            <mat-icon>delete</mat-icon>
+        </button>
+    </div>
+    <div class="goal-item__body">
+        <p class="goal-item__description">
+            {{ goal.description }}
+        </p>
+    </div>
+    <div class="goal-item__tail">
+        <mat-checkbox [checked]="goal.isPublic" [disabled]="true">public</mat-checkbox>
+    </div>
+</div>

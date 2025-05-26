@@ -1,0 +1,25 @@
+<h2 mat-dialog-title style="margin-top: 1rem;">{{ dialogTitle }}</h2>
+<mat-dialog-content>
+    <form [formGroup]="goalForm" style="padding: 1rem;">
+        <mat-form-field appearance="outline" class="form-field-full">
+            <mat-label>Title</mat-label>
+            <input matInput formControlName="title">
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="form-field-full">
+            <mat-label>Description</mat-label>
+            <input matInput formControlName="description">
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="form-field-full">
+            <mat-label>Deadline</mat-label>
+            <input matInput formControlName="deadline" [matDatepicker]="picker">
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+        <mat-checkbox formControlName="isPublic">public</mat-checkbox>
+    </form>
+</mat-dialog-content>
+<mat-dialog-actions>
+    <button mat-raised-button primary (click)="onConfirm()" [disabled]="!goalForm.valid">Confirm</button>
+    <button mat-button (click)="onCancel()">Cancel</button>
+</mat-dialog-actions>

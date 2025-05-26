@@ -1,0 +1,13 @@
+<h1 class="goal-list__header">Goals</h1>
+<div class="goal-list__container">
+    @if (!goalService.goals().length) {
+        <p style="text-align: center;">No goals are added yet!</p>
+    }
+
+    @for (goal of goalService.goals(); track goal._id) {
+        <app-goal-item [goal]="goal" (click)="onEditGoal(goal)"></app-goal-item>
+    }
+    <button mat-fab class="add-goal-btn" (click)="onAddNewGoal()">
+        <mat-icon>add</mat-icon>
+    </button>
+</div>

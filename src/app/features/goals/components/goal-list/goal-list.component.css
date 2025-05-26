@@ -1,0 +1,19 @@
+.goal-list__header {
+  text-align: center;
+  margin-block: 1rem;
+}
+
+.goal-list__container {
+  max-width: 750px;
+  padding: 20px;
+  margin-inline: auto;
+  display: flex;
+  flex-flow: column nowrap;
+  row-gap: 1rem;
+}
+
+.add-goal-btn {
+  position: absolute;
+  right: 75px;
+  bottom: 75px;
+}
