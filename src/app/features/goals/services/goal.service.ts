@@ -24,7 +24,6 @@ export class GoalService {
   loadGoals() {
     this.http.get<Goal[]>(this.baseUrl).subscribe({
       next: (goals) => {
-        console.log('goals', goals);
         this.goalsSignal.set(goals);
       },
     });

@@ -47,6 +47,7 @@ export class AuthService {
     localStorage.removeItem('token');
     this.isAuthenticated.set(false);
     this.router.navigate(['/login']);
+    window.location.reload();
   }
 
   getToken(): string | null {
